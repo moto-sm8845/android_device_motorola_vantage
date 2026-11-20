@@ -29,9 +29,9 @@ from extract_utils.tools import (
 )
 
 namespace_imports = [
-    'device/motorola/sm8550-common',
-    'vendor/motorola/sm8550-common',
-    'hardware/qcom-caf/sm8550',
+    'device/motorola/sm8845-common',
+    'vendor/motorola/sm8845-common',
+    'hardware/qcom-caf/sm8850',
     'hardware/qcom-caf/wlan',
     'hardware/motorola',
     'vendor/qcom/opensource/commonsys-intf/display',
@@ -45,8 +45,6 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
-    'vendor/lib64/libgf_hal.so': blob_fixup()
-        .replace_needed('vendor.goodix.hardware.biometrics.fingerprint@2.1_vendor.so', 'vendor.goodix.hardware.biometrics.fingerprint@2.1.so'),
     'vendor/lib64/libmot_chi_desktop_helper.so': blob_fixup()
         .add_needed('libgui_buffer_shim_vendor.so'),
     'vendor/lib64/nfc_nci.nqx.default.hw.so': blob_fixup()
@@ -63,7 +61,7 @@ extract_fns: extract_fns_user_type = {
 }
 
 module = ExtractUtilsModule(
-    'rtwo',
+    'vantage',
     'motorola',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
@@ -75,7 +73,7 @@ module = ExtractUtilsModule(
 
 if __name__ == '__main__':
     utils = ExtractUtils.device_with_common(
-        module, 'sm8550-common', module.vendor
+        module, 'sm8845-common', module.vendor
     )
     utils.run()
 
