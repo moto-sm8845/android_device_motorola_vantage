@@ -3,10 +3,7 @@ esim.enable_esim_system_ui_by_default=true
 masterclear.allow_retain_esim_profiles_after_fdr=true
 
 # Google
-ro.opa.device_model_id=motorola-rtwo
-
-# Radio
-ro.vendor.radio.imei.sv=25
+ro.opa.device_model_id=motorola-vantage
 
 # SKU specific properties
 import /product/etc/hardware.sku.${ro.boot.hardware.sku}.prop

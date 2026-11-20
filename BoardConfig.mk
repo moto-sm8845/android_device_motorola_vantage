@@ -3,20 +3,20 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/motorola/rtwo
+DEVICE_PATH := device/motorola/vantage
 
-# Inherit from motorola sm8550-common
-include device/motorola/sm8550-common/BoardConfigCommon.mk
+# Inherit from motorola sm8845-common
+include device/motorola/sm8845-common/BoardConfigCommon.mk
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := rtwo
+TARGET_BOOTLOADER_BOARD_NAME := vantage
 
 # Display
-TARGET_SCREEN_DENSITY := 400
+TARGET_SCREEN_DENSITY := 480
 
 # Kernel
 TARGET_KERNEL_CONFIG += \
-	vendor/ext_config/moto-kalama-rtwo.config
+	vendor/ext_config/moto-canoe-vantage.config
 
 # Partitions
 ifneq ($(WITH_GMS),true)
@@ -35,7 +35,7 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 90
 
 # Security
-BOOT_SECURITY_PATCH := 2026-07-01
+BOOT_SECURITY_PATCH := 2026-08-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # Verified Boot
@@ -43,4 +43,4 @@ BOARD_AVB_ROLLBACK_INDEX := 37
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(BOARD_AVB_ROLLBACK_INDEX)
 
 # inherit from the proprietary version
-include vendor/motorola/rtwo/BoardConfigVendor.mk
+include vendor/motorola/vantage/BoardConfigVendor.mk

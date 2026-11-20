@@ -3,10 +3,6 @@ on fs
     mount_all /vendor/etc/fstab.qcom.zram --early
 
 on early-boot
-    # Add for goodix fingerprint
-    chown system system /dev/goodix_fp
-    chmod 0664 /dev/goodix_fp
-
     chown system system /mnt/vendor/persist/sensors/als_comp_multi_cal_raw
     chmod 0664 /mnt/vendor/persist/sensors/als_comp_multi_cal_raw
     write /sys/kernel/mm/lru_gen/enabled Y
@@ -99,16 +95,16 @@ on property:sys.boot_completed=1
 
 #Override fwpath string when wpa_supplicant server was killed
 on property:vendor.wifi.station=true
-    write /sys/module/kiwi_v2/parameters/sar_sta enabled
+    write /sys/module/peach_v2/parameters/sar_sta enabled
 
 on property:vendor.wifi.station=false
-    write /sys/module/kiwi_v2/parameters/sar_sta disabled
+    write /sys/module/peach_v2/parameters/sar_sta disabled
 
 on property:vendor.wifi.tethering=false
-    write /sys/module/kiwi_v2/parameters/sar_mhs disabled
+    write /sys/module/peach_v2/parameters/sar_mhs disabled
 
 on property:vendor.wifi.tethering=true
-    write /sys/module/kiwi_v2/parameters/sar_mhs enabled
+    write /sys/module/peach_v2/parameters/sar_mhs enabled
 
 on property:ro.carrier=tmo
     setprop persist.vendor.audio.use_case.extend tmo

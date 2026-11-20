@@ -4,13 +4,25 @@
 //
 
 prebuilt_etc {
-    name: "hardware.sku.XT2301-1.prop",
-    src: "hardware.sku.XT2301-1.prop",
+    name: "hardware.sku.XT2603-1.prop",
+    src: "hardware.sku.XT2603-1.prop",
     product_specific: true,
 }
 
 prebuilt_etc {
-    name: "hardware.sku.XT2301-5.prop",
-    src: "hardware.sku.XT2301-5.prop",
+    name: "hardware.sku.XT2603-2.prop",
+    src: "hardware.sku.XT2603-2.prop",
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "hardware.sku.XT2603-3.prop",
+    src: "hardware.sku.XT2603-3.prop",
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "hardware.sku.XT2603-4.prop",
+    src: "hardware.sku.XT2603-4.prop",
     product_specific: true,
 }

@@ -7,21 +7,21 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from rtwo device
-$(call inherit-product, device/motorola/rtwo/device.mk)
+# Inherit from vantage device
+$(call inherit-product, device/motorola/vantage/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_rtwo
-PRODUCT_DEVICE := rtwo
+PRODUCT_NAME := lineage_vantage
+PRODUCT_DEVICE := vantage
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola
-PRODUCT_MODEL := motorola edge 40 pro
+PRODUCT_MODEL := motorola signature
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="rtwo_g-user 16 W1TRS36H.56-13-1-3 cb3b97-65907 release-keys MW-419" \
-    BuildFingerprint=motorola/rtwo_g/rtwo:16/W1TRS36H.56-13-1-3/cb3b97-65907:user/release-keys \
-    DeviceProduct=rtwo_g
+    BuildDesc="vantage_g-user 16 WWV36HV-16-ST1.1 4548c release-keys" \
+    BuildFingerprint=motorola/vantage_g/vantage:16/WWV36HV-16-ST1.1/4548c:user/release-keys \
+    DeviceProduct=vantage_g
