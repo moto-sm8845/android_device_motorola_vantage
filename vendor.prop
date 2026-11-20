@@ -9,3 +9,6 @@ vendor.audio.min.temp=20.0
 # Camera
 persist.vendor.camera.physical.num=4
 ro.camera.enableCamera1MaxZsl=1
+
+# NFC
+ro.vendor.hw.nfc=st

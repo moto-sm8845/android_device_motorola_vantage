@@ -1,0 +1,3 @@
+# NFC
+persist.nfc_cfg.config_file_name=libnfc-nci-st.conf
+persist.nfc_vendor_extn.lib_file_name=libnfc_vendor_extn_st.so

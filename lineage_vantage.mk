@@ -22,6 +22,6 @@ PRODUCT_MODEL := motorola signature
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="vantage_g-user 16 WWV36HV-16-ST1.1 4548c release-keys" \
-    BuildFingerprint=motorola/vantage_g/vantage:16/WWV36HV-16-ST1.1/4548c:user/release-keys \
+    BuildDesc="vantage_g-user 17 A171SWVH.21-16-16-2 a6263-e6f3a9 release-keys" \
+    BuildFingerprint=motorola/vantage_g/vantage:17/A171SWVH.21-16-16-2/a6263-e6f3a9:user/release-keys \
     DeviceProduct=vantage_g
