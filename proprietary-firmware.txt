@@ -19,6 +19,5 @@ storsec.mbn:storsec.img;AB
 tz.mbn:tz.img;AB
 uefi.elf:uefi.img;AB
 uefi_sec.mbn:uefisecapp.img;AB
-xbl_s.melf:xbl.img;AB
 xbl_config.elf:xbl_config.img;AB
 XblRamdump.elf:xbl_ramdump.img;AB

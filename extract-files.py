@@ -45,15 +45,20 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
-    'vendor/lib64/libmot_chi_desktop_helper.so': blob_fixup()
-        .add_needed('libgui_buffer_shim_vendor.so'),
-    'vendor/lib64/nfc_nci.nqx.default.hw.so': blob_fixup()
-    .add_needed('libbase_shim.so'),
     (
         'vendor/bin/hw/vendor.qti.camera.provider-service_64',
         'vendor/lib64/camx.provider-impl.so',
     ): blob_fixup()
-        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so')
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    # Built against the older camera AIDL generations (offlinecamera V2, which
+    # reexports camera.device-V2, and allocator V1); the in-tree camx/gralloc
+    # stack builds camera.device-V3 and allocator-V2, and both audio/camera
+    # graphs must not carry two versions of the same aidl_interface.
+    'vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so': blob_fixup()
+        .replace_needed('vendor.qti.hardware.camera.offlinecamera-V2-ndk.so', 'vendor.qti.hardware.camera.offlinecamera-V3-ndk.so')
+        .remove_needed('android.hardware.graphics.allocator-V1-ndk.so'),
+    'vendor/lib64/camera/components/com.qti.node.dewarp.so': blob_fixup()
+        .remove_needed('android.hardware.graphics.allocator-V1-ndk.so'),
 }  # fmt: skip
 
 extract_fns: extract_fns_user_type = {
